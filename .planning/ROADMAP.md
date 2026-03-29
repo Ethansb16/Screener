@@ -44,7 +44,12 @@ Plans:
   1. After a pipeline run, the database contains Form 10-12B and spinoff-related 8-K filings discovered from EDGAR EFTS within the last 24 hours
   2. Each discovered event is classified as spinoff, carve-out, divestiture, or split-off — only true spinoffs are promoted past the candidate stage
   3. A spinoff record moves from Candidate to Confirmed when the Form 10-12B/A amendment progression confirms effectiveness, and can transition to Withdrawn if the deal is pulled
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — EFTS query, filing INSERT, discover stub replacement (DISC-01)
+- [ ] 02-02-PLAN.md — Deal type classification, insertOpportunity gating (DISC-02)
+- [ ] 02-03-PLAN.md — Lifecycle checker (EFFECT/RW), persist stub replacement (DISC-03)
 
 ### Phase 3: Signal Extraction
 **Goal**: For each spinoff candidate, the system extracts four structured signals from the Form 10 text
@@ -85,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete    | 2026-03-29 |
-| 2. Discovery | 0/TBD | Not started | - |
+| 2. Discovery | 0/3 | Not started | - |
 | 3. Signal Extraction | 0/TBD | Not started | - |
 | 4. AI Analysis | 0/TBD | Not started | - |
 | 5. Dashboard | 0/TBD | Not started | - |
