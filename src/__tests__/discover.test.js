@@ -129,6 +129,10 @@ test('DISC-01: insertFiling inserts one row and returns the sqlite row id', asyn
   const { initializeSchema } = await import('../db/schema.js?v=1');
   initializeSchema();
 
+  // Pre-clean stale rows (handles leftover data from prior runs or concurrent tests)
+  db.prepare("DELETE FROM opportunities WHERE filing_id IN (SELECT id FROM filings WHERE accession_number = ?)").run('0001193125-16-760799');
+  db.prepare("DELETE FROM filings WHERE accession_number = ?").run('0001193125-16-760799');
+
   const countBefore = db.prepare('SELECT COUNT(*) AS n FROM filings').get().n;
 
   const rowId = insertFiling(sampleHit1);
@@ -141,7 +145,8 @@ test('DISC-01: insertFiling inserts one row and returns the sqlite row id', asyn
   assert.equal(rows[0].accession_number, '0001193125-16-760799');
   assert.equal(rows[0].company_name, 'Acme SpinCo Inc');
 
-  // Cleanup
+  // Cleanup (opportunities first due to FK constraint)
+  db.prepare("DELETE FROM opportunities WHERE filing_id IN (SELECT id FROM filings WHERE accession_number = ?)").run('0001193125-16-760799');
   db.prepare('DELETE FROM filings WHERE accession_number = ?').run('0001193125-16-760799');
   // Restore count
   const countAfter = db.prepare('SELECT COUNT(*) AS n FROM filings').get().n;
@@ -179,6 +184,11 @@ test('DISC-01: insertFiling is idempotent — second call inserts nothing (INSER
 });
 
 test('DISC-01: runDiscover returns array of inserted filing ids', async () => {
+  // Pre-clean stale rows from prior runs or concurrent tests
+  const { default: dbPre } = await import('../db/db.js?v=4');
+  dbPre.prepare("DELETE FROM opportunities WHERE filing_id IN (SELECT id FROM filings WHERE accession_number IN ('0001193125-16-760799','0001234567-25-000001'))").run();
+  dbPre.prepare("DELETE FROM filings WHERE accession_number IN ('0001193125-16-760799','0001234567-25-000001')").run();
+
   globalThis.fetch = async () => {
     return new Response(JSON.stringify(makeMockEFTSResponse([sampleHit1, sampleHit2])), {
       status: 200,
@@ -192,8 +202,9 @@ test('DISC-01: runDiscover returns array of inserted filing ids', async () => {
   assert.ok(Array.isArray(result), `Expected array, got ${typeof result}`);
   assert.equal(result.length, 2, `Expected 2 inserted ids, got ${result.length}`);
 
-  // Cleanup inserted rows
+  // Cleanup inserted rows (opportunities first due to FK constraint)
   const { default: db } = await import('../db/db.js?v=3');
+  db.prepare("DELETE FROM opportunities WHERE filing_id IN (SELECT id FROM filings WHERE accession_number IN ('0001193125-16-760799','0001234567-25-000001'))").run();
   db.prepare("DELETE FROM filings WHERE accession_number IN ('0001193125-16-760799','0001234567-25-000001')").run();
 });
 
