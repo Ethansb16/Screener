@@ -12,7 +12,7 @@ Five phases build the Spinoff Screener from the ground up. Phase 1 establishes t
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - EDGAR client, SQLite schema, cron scheduler, and pipeline shell
+- [x] **Phase 1: Foundation** - EDGAR client, SQLite schema, cron scheduler, and pipeline shell (completed 2026-03-29)
 - [ ] **Phase 2: Discovery** - EDGAR EFTS spinoff detection, deal classification, and lifecycle state tracking
 - [ ] **Phase 3: Signal Extraction** - Form 10 parsing for all four V1 signals
 - [ ] **Phase 4: AI Analysis** - Claude Batch API integration for summaries and red flag generation
@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md — Packages, DB singleton + schema, logger, Wave 0 test stubs (INFRA-02)
 - [x] 01-02-PLAN.md — EDGAR client with rate limiting, User-Agent, retry (INFRA-01)
-- [ ] 01-03-PLAN.md — Pipeline runner, stage stubs, scheduler, main entry point (INFRA-03, INFRA-04)
+- [x] 01-03-PLAN.md — Pipeline runner, stage stubs, scheduler, main entry point (INFRA-03, INFRA-04)
 
 ### Phase 2: Discovery
 **Goal**: The system populates a daily-refreshed list of spinoff candidates from EDGAR, each with deal type and lifecycle status
@@ -84,7 +84,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In Progress|  |
+| 1. Foundation | 3/3 | Complete   | 2026-03-29 |
 | 2. Discovery | 0/TBD | Not started | - |
 | 3. Signal Extraction | 0/TBD | Not started | - |
 | 4. AI Analysis | 0/TBD | Not started | - |
