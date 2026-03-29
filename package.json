@@ -1,0 +1,20 @@
+{
+  "name": "spinoff-screener",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test src/__tests__/",
+    "dev": "node src/main.js | pino-pretty"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "better-sqlite3": "^12.8.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "p-limit": "^7.3.0",
+    "pino": "^10.3.1",
+    "pino-pretty": "latest"
+  }
+}
