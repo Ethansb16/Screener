@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-discovery-02-01-PLAN.md
-last_updated: "2026-03-29T10:22:10.146Z"
+stopped_at: Completed 02-discovery-02-02-PLAN.md
+last_updated: "2026-03-29T10:27:16.954Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 5
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 ## Current Position
 
 Phase: 2 (Discovery) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-03-29
 
@@ -56,6 +56,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P02 | 12 | 2 tasks | 3 files |
 | Phase 01-foundation P03 | 2 | 2 tasks | 9 files |
 | Phase 02-discovery P01 | 10 | 2 tasks | 3 files |
+| Phase 02-discovery P02 | 20 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: main.js starts schema init before scheduler — ensures run_log table exists for first pipeline run
 - [Phase 02-discovery]: Import path in discover.js is ../../ingestion/edgarIngester.js (not ../ingestion) — stages/ is two levels deep from src/
 - [Phase 02-discovery]: No EFTS pagination in Phase 2: daily 10-12B volume is 0-5; size=100 sufficient
+- [Phase 02-discovery]: 10-12B filings are never carve_out — carve-outs use S-1 per research; Form 10 always classifies as spinoff or split-off
+- [Phase 02-discovery]: split-off detection checks display_names for 'exchange offer' text; divestiture is safe fallback for unknown form types
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T10:22:10.144Z
-Stopped at: Completed 02-discovery-02-01-PLAN.md
+Last session: 2026-03-29T10:27:16.952Z
+Stopped at: Completed 02-discovery-02-02-PLAN.md
 Resume file: None

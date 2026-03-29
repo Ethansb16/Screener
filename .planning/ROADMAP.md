@@ -48,7 +48,7 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — EFTS query, filing INSERT, discover stub replacement (DISC-01)
-- [ ] 02-02-PLAN.md — Deal type classification, insertOpportunity gating (DISC-02)
+- [x] 02-02-PLAN.md — Deal type classification, insertOpportunity gating (DISC-02)
 - [ ] 02-03-PLAN.md — Lifecycle checker (EFFECT/RW), persist stub replacement (DISC-03)
 
 ### Phase 3: Signal Extraction
@@ -90,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete    | 2026-03-29 |
-| 2. Discovery | 1/3 | In Progress|  |
+| 2. Discovery | 2/3 | In Progress|  |
 | 3. Signal Extraction | 0/TBD | Not started | - |
 | 4. AI Analysis | 0/TBD | Not started | - |
 | 5. Dashboard | 0/TBD | Not started | - |
