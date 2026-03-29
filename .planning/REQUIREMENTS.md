@@ -8,7 +8,7 @@
 ### Infrastructure
 
 - [ ] **INFRA-01**: EDGAR client sends requests with required User-Agent header and enforces ≤8 req/s rate limit
-- [ ] **INFRA-02**: SQLite database stores spinoff records with idempotent upsert (no duplicate filings on re-run)
+- [x] **INFRA-02**: SQLite database stores spinoff records with idempotent upsert (no duplicate filings on re-run)
 - [ ] **INFRA-03**: Daily cron job runs pipeline automatically at a configurable time each morning
 - [ ] **INFRA-04**: Pipeline shell executes stages sequentially: discover → extract signals → analyze → persist
 
@@ -65,7 +65,7 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
+| INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Pending |
 | INFRA-04 | Phase 1 | Pending |
 | DISC-01 | Phase 2 | Pending |

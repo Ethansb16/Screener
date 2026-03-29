@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Packages, DB singleton + schema, logger, Wave 0 test stubs (INFRA-02)
+- [x] 01-01-PLAN.md — Packages, DB singleton + schema, logger, Wave 0 test stubs (INFRA-02)
 - [ ] 01-02-PLAN.md — EDGAR client with rate limiting, User-Agent, retry (INFRA-01)
 - [ ] 01-03-PLAN.md — Pipeline runner, stage stubs, scheduler, main entry point (INFRA-03, INFRA-04)
 
@@ -84,7 +84,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 1/3 | In Progress|  |
 | 2. Discovery | 0/TBD | Not started | - |
 | 3. Signal Extraction | 0/TBD | Not started | - |
 | 4. AI Analysis | 0/TBD | Not started | - |
