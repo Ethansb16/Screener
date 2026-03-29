@@ -16,7 +16,7 @@
 
 - [x] **DISC-01**: System scans SEC EDGAR EFTS daily for Form 10-12B and spinoff-related 8-K filings
 - [x] **DISC-02**: System classifies each event as true spinoff, carve-out, divestiture, or split-off — only true spinoffs proceed through the pipeline
-- [ ] **DISC-03**: Each spinoff record tracks lifecycle state: Candidate (announced) → Confirmed (effective) → Withdrawn
+- [x] **DISC-03**: Each spinoff record tracks lifecycle state: Candidate (announced) → Confirmed (effective) → Withdrawn
 
 ### Signal Extraction
 
@@ -70,7 +70,7 @@
 | INFRA-04 | Phase 1 | Complete |
 | DISC-01 | Phase 2 | Complete |
 | DISC-02 | Phase 2 | Complete |
-| DISC-03 | Phase 2 | Pending |
+| DISC-03 | Phase 2 | Complete |
 | SIG-01 | Phase 3 | Pending |
 | SIG-02 | Phase 3 | Pending |
 | SIG-03 | Phase 3 | Pending |
