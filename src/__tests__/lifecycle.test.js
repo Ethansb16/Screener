@@ -137,8 +137,16 @@ function setupSchema(db) {
   `);
 }
 
-// Insert a filing + opportunity row and return the opportunity id
+// Insert a filing + opportunity row and return the opportunity id.
+// Deletes any leftover rows first so tests are idempotent across runs.
 function insertTestCandidate(db, { accession, cik, company = 'TestCo' } = {}) {
+  // Clean up any leftover from a previous crashed run
+  const existingFiling = db.prepare('SELECT id FROM filings WHERE accession_number = ?').get(accession);
+  if (existingFiling) {
+    db.prepare('DELETE FROM opportunities WHERE filing_id = ?').run(existingFiling.id);
+    db.prepare('DELETE FROM filings WHERE id = ?').run(existingFiling.id);
+  }
+
   const fResult = db.prepare(`
     INSERT INTO filings (accession_number, form_type, cik, company_name, filed_at)
     VALUES (?, '10-12B', ?, ?, '2025-03-01')
