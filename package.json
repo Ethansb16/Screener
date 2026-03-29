@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/main.js",
-    "test": "node --test src/__tests__/",
+    "test": "node --test \"src/__tests__/*.test.js\"",
     "dev": "node src/main.js | pino-pretty"
   },
   "dependencies": {
