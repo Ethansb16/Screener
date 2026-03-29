@@ -12,7 +12,7 @@ Quickly identify spinoffs where insiders are incentivized to succeed — before 
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Pipeline infrastructure (EDGAR client, SQLite schema, cron scheduler, pipeline shell) — Phase 1: Foundation
 
 ### Active
 
@@ -34,7 +34,7 @@ Quickly identify spinoffs where insiders are incentivized to succeed — before 
 
 - Investment thesis is based on Joel Greenblatt's spinoff playbook: spinoffs are often overlooked, institutional sellers create mispricing, and insider incentives are the key signal separating good from bad.
 - Two core insider signals to detect: (1) executives/directors buying via Form 4 filings, (2) management receiving equity grants in the new entity (reward structure = aligned incentives).
-- Existing codebase has a `claude` npm dependency — Claude AI is the intended engine for summarization and signal analysis.
+- Claude AI engine: `@anthropic-ai/sdk@0.80.0` installed (replaced broken `claude@0.1.1` stub in Phase 1).
 - Data pipeline: news APIs for fast discovery → SEC EDGAR for authoritative filing data → Claude for analysis and verdict.
 
 ## Constraints
@@ -47,7 +47,7 @@ Quickly identify spinoffs where insiders are incentivized to succeed — before 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Claude as AI engine | Already in package.json; good at financial text summarization | — Pending |
+| Claude as AI engine | Already in package.json; good at financial text summarization | ✓ Good — @anthropic-ai/sdk installed Phase 1 |
 | Daily refresh over real-time | Spinoff investing is not a day-trading thesis — daily is sufficient | — Pending |
 | Insider signal focus for v1 | Full AI verdict is v2; insider signals + discovery is the minimum useful version | — Pending |
 
@@ -69,4 +69,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after initialization*
+*Last updated: 2026-03-29 after Phase 1: Foundation complete*
