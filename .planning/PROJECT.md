@@ -13,6 +13,7 @@ Quickly identify spinoffs where insiders are incentivized to succeed — before 
 ### Validated
 
 - ✓ Pipeline infrastructure (EDGAR client, SQLite schema, cron scheduler, pipeline shell) — Phase 1: Foundation
+- ✓ Spinoff discovery: EDGAR EFTS daily scan, deal type classification, lifecycle state tracking — Phase 2: Discovery
 
 ### Active
 
@@ -69,4 +70,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 after Phase 1: Foundation complete*
+*Last updated: 2026-03-29 after Phase 2: Discovery complete*
