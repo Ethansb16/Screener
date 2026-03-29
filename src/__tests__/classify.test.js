@@ -130,9 +130,12 @@ test('DISC-02: insertOpportunity inserts a row in opportunities for a spinoff fi
 
   const { insertOpportunity } = await import('../ingestion/edgarIngester.js?v=opp1');
 
+  // Clean up any pre-existing rows from prior test runs
+  db.prepare("DELETE FROM filings WHERE accession_number = '0001111111-25-000001'").run();
+
   // Insert a parent filings row directly so we have a valid filing_id
   const filing = db.prepare(`
-    INSERT OR IGNORE INTO filings
+    INSERT INTO filings
       (accession_number, form_type, cik, company_name, filed_at, primary_doc_url)
     VALUES (?, ?, ?, ?, ?, ?)
   `).run('0001111111-25-000001', '10-12B', '0001111111', 'Test SpinCo Inc', '2025-03-27', 'https://www.sec.gov/Archives/edgar/data/1111111/000111111125000001/');
@@ -159,8 +162,10 @@ test('DISC-02: insertOpportunity is idempotent — second call for same filing_i
 
   const { insertOpportunity } = await import('../ingestion/edgarIngester.js?v=opp2');
 
+  db.prepare("DELETE FROM filings WHERE accession_number = '0001111111-25-000002'").run();
+
   const filing = db.prepare(`
-    INSERT OR IGNORE INTO filings
+    INSERT INTO filings
       (accession_number, form_type, cik, company_name, filed_at, primary_doc_url)
     VALUES (?, ?, ?, ?, ?, ?)
   `).run('0001111111-25-000002', '10-12B', '0001111111', 'Test SpinCo Inc', '2025-03-27', 'https://www.sec.gov/Archives/');
@@ -192,8 +197,10 @@ test('DISC-02: insertOpportunity does NOT insert for deal type "carve_out"', asy
 
   const { insertOpportunity } = await import('../ingestion/edgarIngester.js?v=opp3');
 
+  db.prepare("DELETE FROM filings WHERE accession_number = '0001111111-25-000003'").run();
+
   const filing = db.prepare(`
-    INSERT OR IGNORE INTO filings
+    INSERT INTO filings
       (accession_number, form_type, cik, company_name, filed_at, primary_doc_url)
     VALUES (?, ?, ?, ?, ?, ?)
   `).run('0001111111-25-000003', '10-12B', '0001111111', 'Test SpinCo Inc', '2025-03-27', 'https://www.sec.gov/Archives/');

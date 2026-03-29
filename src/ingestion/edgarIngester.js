@@ -12,6 +12,7 @@ import { edgarGetJson } from '../ingestion/edgarClient.js';
 import { normalizeCIK, accessionToPath } from '../lib/edgar-utils.js';
 import db from '../db/db.js';
 import logger from '../logger.js';
+import { classifyDeal } from './classifyDeal.js';
 
 /**
  * Parse a display_name string into company name, ticker, and CIK.
@@ -94,6 +95,63 @@ export function insertFiling(hit) {
     filed_at: file_date,
     period_of_report: period_ending ?? null,
     primary_doc_url,
+  });
+
+  return result.lastInsertRowid;
+}
+
+/**
+ * Insert an opportunity record for a discovered spinoff filing.
+ * Only inserts for deal types 'spinoff', 'split-off', and 'pending_classification'.
+ * Skips 'carve_out' and 'divestiture'.
+ *
+ * @param {number} filingId - row id from filings table (returned by insertFiling)
+ * @param {object} hit - raw EFTS _source hit object
+ * @param {string} dealType - from classifyDeal()
+ * @returns {number} lastInsertRowid (0 = ignored/skipped)
+ */
+export function insertOpportunity(filingId, hit, dealType) {
+  // Skip non-spinoff deal types — they do not proceed through the pipeline
+  if (dealType === 'carve_out' || dealType === 'divestiture') {
+    return 0;
+  }
+
+  const rawName = hit._source?.display_names?.[0] ?? '';
+  const { companyName, ticker } = parseDisplayName(rawName);
+
+  // Map deal type to signal_type and signal_strength per schema convention
+  const signalType = (dealType === 'spinoff' || dealType === 'split-off')
+    ? 'form_10'
+    : '8k_spinoff';
+  const signalStrength = signalType === 'form_10' ? 'moderate' : 'weak';
+
+  const form = hit._source?.form ?? '';
+  const fileDate = hit._source?.file_date ?? '';
+  const summary = `${form} filed by ${companyName} on ${fileDate}`;
+
+  // Fetch primary_doc_url from the filings row already inserted
+  const filing = db.prepare('SELECT primary_doc_url FROM filings WHERE id = ?').get(filingId);
+
+  const stmt = db.prepare(`
+    INSERT OR IGNORE INTO opportunities
+      (filing_id, source_type, company_name, ticker, spinoff_target,
+       signal_type, signal_strength, summary, raw_source_url, status)
+    VALUES
+      (@filing_id, @source_type, @company_name, @ticker, @spinoff_target,
+       @signal_type, @signal_strength, @summary, @raw_source_url, @status)
+  `);
+
+  const result = stmt.run({
+    filing_id:       filingId,
+    source_type:     'sec_filing',
+    company_name:    companyName,
+    ticker:          ticker ?? null,
+    spinoff_target:  null,
+    signal_type:     signalType,
+    signal_strength: signalStrength,
+    summary,
+    raw_source_url:  filing?.primary_doc_url ?? null,
+    status:          'new',
   });
 
   return result.lastInsertRowid;
