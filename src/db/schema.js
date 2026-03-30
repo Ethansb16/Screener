@@ -66,5 +66,18 @@ export function initializeSchema() {
       opportunities_added INTEGER DEFAULT 0,
       error_message       TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS signals (
+      id           INTEGER PRIMARY KEY AUTOINCREMENT,
+      filing_id    INTEGER NOT NULL REFERENCES filings(id),
+      signal_name  TEXT    NOT NULL,
+      classification TEXT,
+      confidence   TEXT,
+      raw_excerpt  TEXT,
+      extracted_at TEXT DEFAULT (datetime('now')),
+      UNIQUE(filing_id, signal_name)
+    );
+    CREATE INDEX IF NOT EXISTS idx_signals_filing_id ON signals(filing_id);
+    CREATE INDEX IF NOT EXISTS idx_signals_signal_name ON signals(signal_name);
   `);
 }
