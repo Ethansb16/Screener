@@ -20,10 +20,10 @@
 
 ### Signal Extraction
 
-- [ ] **SIG-01**: System extracts reason classification from Form 10 "Reasons for the Distribution" section — strategic focus vs. disposal of weak unit
-- [ ] **SIG-02**: System detects whether SpinCo management is receiving equity grants in the new entity (bullish alignment signal)
-- [ ] **SIG-03**: System checks capitalization section for evidence of excessive debt loaded onto SpinCo (bearish debt-stuffing signal)
-- [ ] **SIG-04**: System identifies whether strong leaders are moving to SpinCo or remaining at parent (management continuity signal)
+- [x] **SIG-01**: System extracts reason classification from Form 10 "Reasons for the Distribution" section — strategic focus vs. disposal of weak unit
+- [x] **SIG-02**: System detects whether SpinCo management is receiving equity grants in the new entity (bullish alignment signal)
+- [x] **SIG-03**: System checks capitalization section for evidence of excessive debt loaded onto SpinCo (bearish debt-stuffing signal)
+- [x] **SIG-04**: System identifies whether strong leaders are moving to SpinCo or remaining at parent (management continuity signal)
 
 ### AI Analysis
 
@@ -71,10 +71,10 @@
 | DISC-01 | Phase 2 | Complete |
 | DISC-02 | Phase 2 | Complete |
 | DISC-03 | Phase 2 | Complete |
-| SIG-01 | Phase 3 | Pending |
-| SIG-02 | Phase 3 | Pending |
-| SIG-03 | Phase 3 | Pending |
-| SIG-04 | Phase 3 | Pending |
+| SIG-01 | Phase 3 | Complete |
+| SIG-02 | Phase 3 | Complete |
+| SIG-03 | Phase 3 | Complete |
+| SIG-04 | Phase 3 | Complete |
 | AI-01 | Phase 4 | Pending |
 | AI-02 | Phase 4 | Pending |
 | AI-03 | Phase 4 | Pending |
