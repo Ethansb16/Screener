@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Completed 02-discovery-02-03-PLAN.md
-last_updated: "2026-03-29T17:10:27.511Z"
-last_activity: 2026-03-29
+status: executing
+stopped_at: Completed 03-signal-extraction-03-01-PLAN.md
+last_updated: "2026-03-30T00:40:33.332Z"
+last_activity: 2026-03-30
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 9
+  completed_plans: 7
   percent: 0
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Quickly identify spinoffs where insiders are incentivized to succeed — before the broader market prices it in.
-**Current focus:** Phase 2 — Discovery
+**Current focus:** Phase 03 — signal-extraction
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-03-29
+Phase: 03 (signal-extraction) — EXECUTING
+Plan: 2 of 3
+Status: Ready to execute
+Last activity: 2026-03-30
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -58,6 +58,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-discovery P01 | 10 | 2 tasks | 3 files |
 | Phase 02-discovery P02 | 20 | 2 tasks | 4 files |
 | Phase 02-discovery P03 | 15 | 2 tasks | 3 files |
+| Phase 03-signal-extraction P01 | 3 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,7 @@ Recent decisions affecting current work:
 - [Phase 02-discovery]: split-off detection checks display_names for 'exchange offer' text; divestiture is safe fallback for unknown form types
 - [Phase 02-discovery]: RW takes priority over EFFECT in lifecycle checker when both present — withdrawn deal may have received erroneous EFFECT
 - [Phase 02-discovery]: persist.js queries ALL 'new' opportunities on every run — lifecycle changes happen any day independent of discovery
+- [Phase 03-signal-extraction]: 16 tests in extract.test.js cover all 4 signal classifiers — 15 fail RED (signalExtractor.js not yet created), 1 passes (runExtract stub already exists)
 
 ### Pending Todos
 
@@ -93,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T10:31:50.720Z
-Stopped at: Completed 02-discovery-02-03-PLAN.md
+Last session: 2026-03-30T00:40:33.328Z
+Stopped at: Completed 03-signal-extraction-03-01-PLAN.md
 Resume file: None

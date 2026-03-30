@@ -60,7 +60,12 @@ Plans:
   2. The system detects and stores whether SpinCo management is receiving equity grants in the new entity
   3. The system detects and stores whether excessive debt is loaded onto SpinCo based on the capitalization section
   4. The system detects and stores whether strong leaders are moving to SpinCo or remaining at parent
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [x] 03-01-PLAN.md — Install node-html-parser, add signals table to schema, Wave 0 failing tests (SIG-01, SIG-02, SIG-03, SIG-04)
+- [ ] 03-02-PLAN.md — Form 10 fetcher (filing index resolution) and signal classifiers (SIG-01, SIG-02, SIG-03, SIG-04)
+- [ ] 03-03-PLAN.md — Wire runExtract stage replacing stub, pipeline integration (SIG-01, SIG-02, SIG-03, SIG-04)
 
 ### Phase 4: AI Analysis
 **Goal**: Each spinoff opportunity has a Claude-generated plain-English summary that explains the thesis and explicitly calls out red flags
@@ -91,6 +96,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete    | 2026-03-29 |
 | 2. Discovery | 3/3 | Complete    | 2026-03-29 |
-| 3. Signal Extraction | 0/TBD | Not started | - |
+| 3. Signal Extraction | 1/3 | In Progress|  |
 | 4. AI Analysis | 0/TBD | Not started | - |
 | 5. Dashboard | 0/TBD | Not started | - |
