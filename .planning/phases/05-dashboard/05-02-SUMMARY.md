@@ -125,6 +125,15 @@ None - all routes are fully wired to real DB queries and templates from Wave 1.
 - Error handling (400/404) is implemented
 - Phase 5 is the final phase — project is complete
 
+## Self-Check: PASSED
+
+- FOUND: src/web/router.js
+- FOUND: src/main.js
+- FOUND: src/__tests__/dashboard.test.js
+- FOUND: .planning/phases/05-dashboard/05-02-SUMMARY.md
+- FOUND commit a505bc0 (feat: wire router)
+- All 84 tests pass
+
 ---
 *Phase: 05-dashboard*
 *Completed: 2026-03-31*
