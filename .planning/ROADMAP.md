@@ -88,8 +88,12 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Opening the dashboard shows a browsable list of spinoff opportunities with company names, deal type, status, and a top signal indicator visible without clicking anything
   2. Clicking a spinoff opens a detail view with the full signal breakdown (all four V1 signals) and the Claude AI summary including red flag callouts
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
+
+Plans:
+- [ ] 05-01-PLAN.md — Wave 0 tests, DB queries, HTML template functions (DASH-01, DASH-02)
+- [ ] 05-02-PLAN.md — Express router, main.js wiring, browser verification (DASH-01, DASH-02)
 
 ## Progress
 
@@ -102,4 +106,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Discovery | 3/3 | Complete    | 2026-03-29 |
 | 3. Signal Extraction | 3/3 | Complete    | 2026-03-30 |
 | 4. AI Analysis | 2/2 | Complete    | 2026-03-31 |
-| 5. Dashboard | 0/TBD | Not started | - |
+| 5. Dashboard | 0/2 | Not started | - |
