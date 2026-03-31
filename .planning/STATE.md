@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Completed 04-ai-analysis-04-02-PLAN.md
-last_updated: "2026-03-31T01:32:18.314Z"
+status: executing
+stopped_at: Completed 05-dashboard-05-01-PLAN.md
+last_updated: "2026-03-31T02:39:50.761Z"
 last_activity: 2026-03-31
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 13
+  completed_plans: 12
   percent: 0
 ---
 
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Quickly identify spinoffs where insiders are incentivized to succeed — before the broader market prices it in.
-**Current focus:** Phase 04 — ai-analysis
+**Current focus:** Phase 5 — dashboard
 
 ## Current Position
 
-Phase: 5
-Plan: Not started
-Status: Phase complete — ready for verification
+Phase: 5 (dashboard) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
 Last activity: 2026-03-31
 
 Progress: [░░░░░░░░░░] 0%
@@ -62,6 +62,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-signal-extraction P03 | 3 | 1 tasks | 1 files |
 | Phase 04-ai-analysis P01 | 7 | 2 tasks | 3 files |
 | Phase 04-ai-analysis P02 | 5 | 1 tasks | 0 files |
+| Phase 05-dashboard P01 | 15min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,9 @@ Recent decisions affecting current work:
 - [Phase 04-ai-analysis]: SYSTEM_PROMPT exceeds 4096 tokens with worked examples to qualify for claude-haiku-4-5 prompt cache eligibility
 - [Phase 04-ai-analysis]: Errored/expired batch results leave claude_analysis NULL — next pipeline run retries automatically via idempotency filter
 - [Phase 04-ai-analysis]: analyze.js stub was already replaced by 04-01 executor — 04-02 verified correctness and confirmed all 6 tests pass
+- [Phase 05-dashboard]: LEFT JOIN (not INNER JOIN) for signals — handles opportunities where signal extraction hasn't run yet
+- [Phase 05-dashboard]: Split claude_analysis on 'Red Flags:' for red flag rendering — deterministic because Claude output follows SYSTEM_PROMPT format from Phase 4
+- [Phase 05-dashboard]: esc() guard on all DB-originated strings in template literals — defensive against < > & in SEC filing text and Claude output
 
 ### Pending Todos
 
@@ -105,6 +109,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-31T01:24:54.035Z
-Stopped at: Completed 04-ai-analysis-04-02-PLAN.md
+Last session: 2026-03-31T02:39:50.757Z
+Stopped at: Completed 05-dashboard-05-01-PLAN.md
 Resume file: None

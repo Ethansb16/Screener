@@ -33,8 +33,8 @@
 
 ### Dashboard
 
-- [ ] **DASH-01**: Web dashboard displays a browsable feed of spinoff opportunities with key signals visible at a glance (company names, deal type, status, top signal indicator)
-- [ ] **DASH-02**: Each spinoff has a detail view showing full signal breakdown and the Claude AI summary with red flag callouts
+- [x] **DASH-01**: Web dashboard displays a browsable feed of spinoff opportunities with key signals visible at a glance (company names, deal type, status, top signal indicator)
+- [x] **DASH-02**: Each spinoff has a detail view showing full signal breakdown and the Claude AI summary with red flag callouts
 
 ## v2 Requirements
 
@@ -78,8 +78,8 @@
 | AI-01 | Phase 4 | Complete |
 | AI-02 | Phase 4 | Complete |
 | AI-03 | Phase 4 | Complete |
-| DASH-01 | Phase 5 | Pending |
-| DASH-02 | Phase 5 | Pending |
+| DASH-01 | Phase 5 | Complete |
+| DASH-02 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 16 total

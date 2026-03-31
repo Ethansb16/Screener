@@ -92,7 +92,7 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 05-01-PLAN.md — Wave 0 tests, DB queries, HTML template functions (DASH-01, DASH-02)
+- [x] 05-01-PLAN.md — Wave 0 tests, DB queries, HTML template functions (DASH-01, DASH-02)
 - [ ] 05-02-PLAN.md — Express router, main.js wiring, browser verification (DASH-01, DASH-02)
 
 ## Progress
@@ -106,4 +106,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Discovery | 3/3 | Complete    | 2026-03-29 |
 | 3. Signal Extraction | 3/3 | Complete    | 2026-03-30 |
 | 4. AI Analysis | 2/2 | Complete    | 2026-03-31 |
-| 5. Dashboard | 0/2 | Not started | - |
+| 5. Dashboard | 1/2 | In Progress|  |
