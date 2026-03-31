@@ -16,6 +16,7 @@ Quickly identify spinoffs where insiders are incentivized to succeed — before 
 - ✓ Spinoff discovery: EDGAR EFTS daily scan, deal type classification, lifecycle state tracking — Phase 2: Discovery
 - ✓ Signal extraction: Form 10 fetcher, four structured signals (reasons, equity grants, debt loading, management continuity) — Phase 3: Signal Extraction
 - ✓ AI analysis: Claude Batch API summaries with red flag callouts, prompt caching, idempotent re-runs — Phase 4: AI Analysis
+- ✓ Dashboard/feed UI: Express + HTMX browsable feed, detail view with 4 signals + AI summary, red flags rendering — Phase 5: Dashboard
 
 ### Active
 
@@ -23,8 +24,6 @@ Quickly identify spinoffs where insiders are incentivized to succeed — before 
 - [ ] Analyze insider signals: SEC Form 4 filings for executive buying, and whether key players are receiving stock in the spun-off entity
 - [ ] Distinguish quality signal: management rewarded with spinoff equity (bullish) vs. divesting an underperforming unit (bearish)
 - [ ] Daily refresh cycle — new spinoffs and updated insider activity surfaced each morning
-- [ ] Dashboard/feed UI — browsable list of active spinoff opportunities with key signal data
-- [ ] AI-generated plain-English summary per spinoff explaining the opportunity and red flags
 
 ### Out of Scope
 
@@ -72,4 +71,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 4: AI Analysis complete*
+*Last updated: 2026-03-30 after Phase 5: Dashboard complete — all 5 phases delivered*
