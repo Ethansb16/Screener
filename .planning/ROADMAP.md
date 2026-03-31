@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - EDGAR client, SQLite schema, cron scheduler, and pipeline shell (completed 2026-03-29)
 - [x] **Phase 2: Discovery** - EDGAR EFTS spinoff detection, deal classification, and lifecycle state tracking (completed 2026-03-29)
 - [x] **Phase 3: Signal Extraction** - Form 10 parsing for all four V1 signals (completed 2026-03-30)
-- [ ] **Phase 4: AI Analysis** - Claude Batch API integration for summaries and red flag generation
+- [x] **Phase 4: AI Analysis** - Claude Batch API integration for summaries and red flag generation (completed 2026-03-31)
 - [ ] **Phase 5: Dashboard** - Express + HTMX feed and detail views
 
 ## Phase Details
@@ -79,7 +79,7 @@ Plans:
 
 Plans:
 - [x] 04-01-PLAN.md — Wave 0 failing tests + claudeAnalyzer.js implementation (AI-01, AI-02, AI-03)
-- [ ] 04-02-PLAN.md — Wire analyze.js stage replacing stub, pipeline integration (AI-01, AI-02, AI-03)
+- [x] 04-02-PLAN.md — Wire analyze.js stage replacing stub, pipeline integration (AI-01, AI-02, AI-03)
 
 ### Phase 5: Dashboard
 **Goal**: Users can browse the spinoff feed and drill into any opportunity to see its full signal breakdown and AI summary
@@ -101,5 +101,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 3/3 | Complete    | 2026-03-29 |
 | 2. Discovery | 3/3 | Complete    | 2026-03-29 |
 | 3. Signal Extraction | 3/3 | Complete    | 2026-03-30 |
-| 4. AI Analysis | 1/2 | In Progress|  |
+| 4. AI Analysis | 2/2 | Complete   | 2026-03-31 |
 | 5. Dashboard | 0/TBD | Not started | - |
