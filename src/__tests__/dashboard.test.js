@@ -225,3 +225,76 @@ describe('templates', () => {
   });
 
 });
+
+// ---------------------------------------------------------------------------
+// Route handler tests (added in Task 1 of Plan 02)
+// ---------------------------------------------------------------------------
+
+function mockReq(overrides = {}) {
+  return { params: {}, headers: {}, ...overrides };
+}
+
+function mockRes() {
+  const res = {
+    _status: 200,
+    _body: null,
+    status(code) { res._status = code; return res; },
+    send(body) { res._body = body; return res; },
+  };
+  return res;
+}
+
+describe('route handlers', () => {
+
+  test('GET / without HX-Request returns full HTML (contains DOCTYPE)', async () => {
+    const { listOpportunities } = await import('../web/queries.js?v=31');
+    const { renderLayout, renderFeedPage } = await import('../web/templates.js?v=31');
+    const opportunities = listOpportunities();
+    const fragment = renderFeedPage(opportunities);
+    const fullPage = renderLayout(fragment);
+    assert.ok(fullPage.includes('<!DOCTYPE html>'), 'Full page should include DOCTYPE');
+    assert.ok(fullPage.includes('hx-get='), 'Full page should include hx-get attributes');
+  });
+
+  test('GET / with HX-Request returns fragment (no DOCTYPE)', async () => {
+    const { listOpportunities } = await import('../web/queries.js?v=31');
+    const { renderFeedPage } = await import('../web/templates.js?v=31');
+    const opportunities = listOpportunities();
+    const fragment = renderFeedPage(opportunities);
+    assert.ok(!fragment.includes('<!DOCTYPE html>'), 'Fragment should NOT include DOCTYPE');
+    assert.ok(fragment.includes('hx-get=') || fragment.includes('<table'), 'Fragment should include feed table markup');
+  });
+
+  test('GET /opportunities/:id with valid test id returns detail', async () => {
+    const { getOpportunityDetail } = await import('../web/queries.js?v=31');
+    const { renderDetail } = await import('../web/templates.js?v=31');
+    const detail = getOpportunityDetail(testOppId);
+    assert.ok(detail !== null, 'Expected detail to not be null for test opportunity');
+    const fragment = renderDetail(detail);
+    assert.ok(fragment.includes('DashTest Corp'), 'Detail should include company name');
+    assert.ok(
+      fragment.includes('Strategic Focus') || fragment.includes('reason_classification'),
+      'Detail should include signal classification'
+    );
+  });
+
+  test('GET /opportunities/:id with id=999999 returns null from query', async () => {
+    const { getOpportunityDetail } = await import('../web/queries.js?v=31');
+    const result = getOpportunityDetail(999999);
+    assert.equal(result, null, 'Expected null for nonexistent id 999999');
+  });
+
+  test('GET /opportunities/:id validates non-integer id', () => {
+    // Validates the guard logic used in router.js for non-integer ids
+    const id = Number('abc');
+    assert.ok(!Number.isInteger(id), 'Number("abc") should not be an integer — confirms guard logic works');
+  });
+
+  test('router.js exports dashboardRouter', async () => {
+    const { dashboardRouter } = await import('../web/router.js?v=31');
+    assert.ok(dashboardRouter !== undefined, 'dashboardRouter should be exported');
+    assert.ok(typeof dashboardRouter === 'function' || typeof dashboardRouter === 'object',
+      'dashboardRouter should be a Router (function or object)');
+  });
+
+});

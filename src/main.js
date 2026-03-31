@@ -3,6 +3,7 @@ import express from 'express';
 import { initializeSchema } from './db/schema.js';
 import { startScheduler } from './scheduler.js';
 import logger from './logger.js';
+import { dashboardRouter } from './web/router.js';
 
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
@@ -22,10 +23,7 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Placeholder — Phase 5 mounts the dashboard router here
-app.get('/', (_req, res) => {
-  res.send('<h1>Spinoff Screener</h1><p>Dashboard coming in Phase 5.</p>');
-});
+app.use('/', dashboardRouter);
 
 app.listen(PORT, () => {
   logger.info({ port: PORT }, 'Express server listening');
