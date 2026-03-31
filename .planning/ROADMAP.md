@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Discovery** - EDGAR EFTS spinoff detection, deal classification, and lifecycle state tracking (completed 2026-03-29)
 - [x] **Phase 3: Signal Extraction** - Form 10 parsing for all four V1 signals (completed 2026-03-30)
 - [x] **Phase 4: AI Analysis** - Claude Batch API integration for summaries and red flag generation (completed 2026-03-31)
-- [ ] **Phase 5: Dashboard** - Express + HTMX feed and detail views
+- [x] **Phase 5: Dashboard** - Express + HTMX feed and detail views (completed 2026-03-31)
 
 ## Phase Details
 
@@ -106,4 +106,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Discovery | 3/3 | Complete    | 2026-03-29 |
 | 3. Signal Extraction | 3/3 | Complete    | 2026-03-30 |
 | 4. AI Analysis | 2/2 | Complete    | 2026-03-31 |
-| 5. Dashboard | 1/2 | In Progress|  |
+| 5. Dashboard | 1/2 | Complete    | 2026-03-31 |
