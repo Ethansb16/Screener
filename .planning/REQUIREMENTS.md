@@ -27,9 +27,9 @@
 
 ### AI Analysis
 
-- [ ] **AI-01**: Claude generates a plain-English summary of each spinoff explaining what happened and the opportunity thesis
-- [ ] **AI-02**: Claude explicitly calls out red flags (debt stuffing, management exodus, weak-unit disposal language) in each summary
-- [ ] **AI-03**: Claude API integration uses Batch API and prompt caching to minimize cost on daily batch runs
+- [x] **AI-01**: Claude generates a plain-English summary of each spinoff explaining what happened and the opportunity thesis
+- [x] **AI-02**: Claude explicitly calls out red flags (debt stuffing, management exodus, weak-unit disposal language) in each summary
+- [x] **AI-03**: Claude API integration uses Batch API and prompt caching to minimize cost on daily batch runs
 
 ### Dashboard
 
@@ -75,9 +75,9 @@
 | SIG-02 | Phase 3 | Complete |
 | SIG-03 | Phase 3 | Complete |
 | SIG-04 | Phase 3 | Complete |
-| AI-01 | Phase 4 | Pending |
-| AI-02 | Phase 4 | Pending |
-| AI-03 | Phase 4 | Pending |
+| AI-01 | Phase 4 | Complete |
+| AI-02 | Phase 4 | Complete |
+| AI-03 | Phase 4 | Complete |
 | DASH-01 | Phase 5 | Pending |
 | DASH-02 | Phase 5 | Pending |
 

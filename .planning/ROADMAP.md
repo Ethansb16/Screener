@@ -78,7 +78,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Wave 0 failing tests + claudeAnalyzer.js implementation (AI-01, AI-02, AI-03)
+- [x] 04-01-PLAN.md — Wave 0 failing tests + claudeAnalyzer.js implementation (AI-01, AI-02, AI-03)
 - [ ] 04-02-PLAN.md — Wire analyze.js stage replacing stub, pipeline integration (AI-01, AI-02, AI-03)
 
 ### Phase 5: Dashboard
@@ -101,5 +101,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 3/3 | Complete    | 2026-03-29 |
 | 2. Discovery | 3/3 | Complete    | 2026-03-29 |
 | 3. Signal Extraction | 3/3 | Complete    | 2026-03-30 |
-| 4. AI Analysis | 0/2 | Not started | - |
+| 4. AI Analysis | 1/2 | In Progress|  |
 | 5. Dashboard | 0/TBD | Not started | - |

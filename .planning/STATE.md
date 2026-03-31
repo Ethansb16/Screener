@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-signal-extraction-03-03-PLAN.md
-last_updated: "2026-03-30T00:51:44.234Z"
-last_activity: 2026-03-30
+stopped_at: Completed 04-ai-analysis-04-01-PLAN.md
+last_updated: "2026-03-31T01:14:30.377Z"
+last_activity: 2026-03-31
 progress:
   total_phases: 5
   completed_phases: 3
-  total_plans: 9
-  completed_plans: 9
+  total_plans: 11
+  completed_plans: 10
   percent: 0
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Quickly identify spinoffs where insiders are incentivized to succeed — before the broader market prices it in.
-**Current focus:** Phase 2 — Discovery
+**Current focus:** Phase 04 — ai-analysis
 
 ## Current Position
 
-Phase: 4
-Plan: Not started
-Status: In progress
-Last activity: 2026-03-30
+Phase: 04 (ai-analysis) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
+Last activity: 2026-03-31
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -60,6 +60,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-discovery P03 | 15 | 2 tasks | 3 files |
 | Phase 03-signal-extraction P02 | 15 | 2 tasks | 3 files |
 | Phase 03-signal-extraction P03 | 3 | 1 tasks | 1 files |
+| Phase 04-ai-analysis P01 | 7 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -87,6 +88,9 @@ Recent decisions affecting current work:
 - [Phase 03-signal-extraction]: extract.test.js created in 03-02 — 03-01 parallel agent committed schema but not test file; test scaffolding bundled with classifier implementation
 - [Phase 03-signal-extraction]: runExtract receives opportunityIds (number[]) not filings — matches runDiscover() return type
 - [Phase 03-signal-extraction]: Filing lookup JOIN in extract.js itself, not in signalExtractor — keeps signalExtractor domain-pure
+- [Phase 04-ai-analysis]: analyzeOpportunities accepts injectable client parameter — tests pass mock object, no ANTHROPIC_API_KEY required for tests
+- [Phase 04-ai-analysis]: SYSTEM_PROMPT exceeds 4096 tokens with worked examples to qualify for claude-haiku-4-5 prompt cache eligibility
+- [Phase 04-ai-analysis]: Errored/expired batch results leave claude_analysis NULL — next pipeline run retries automatically via idempotency filter
 
 ### Pending Todos
 
@@ -99,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-30T00:48:19.394Z
-Stopped at: Completed 03-signal-extraction-03-03-PLAN.md
+Last session: 2026-03-31T01:14:30.374Z
+Stopped at: Completed 04-ai-analysis-04-01-PLAN.md
 Resume file: None
